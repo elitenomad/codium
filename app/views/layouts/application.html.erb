@@ -2,11 +2,16 @@
 <html>
 <head>
   <title>Codium</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", :cache => true, "data-turbolinks-track" => true %>
 
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css' async='true' cache='true' cache-control='public' max-age='604800'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,900' rel='stylesheet' type='text/css' async='true' cache='true' cache-control='public' max-age='604800'>
+
+  <style>
+    #affix { display: none; position: fixed; top: 0;}
+  </style>
+
+  <%= javascript_include_tag "application", :async => true, :cache => true, "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -14,7 +19,6 @@
 <body>
   <div id="wrap">
     <%= render 'shared/nav' %>
-
 
   <%= yield %>
 
